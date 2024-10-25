@@ -1,0 +1,49 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="PyPackageRequirementsInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredPackages">
+        <value>
+          <list size="15">
+            <item index="0" class="java.lang.String" itemvalue="pydantic-settings" />
+            <item index="1" class="java.lang.String" itemvalue="pydantic-extra-types" />
+            <item index="2" class="java.lang.String" itemvalue="alembic" />
+            <item index="3" class="java.lang.String" itemvalue="cffi" />
+            <item index="4" class="java.lang.String" itemvalue="psycopg2" />
+            <item index="5" class="java.lang.String" itemvalue="cryptography" />
+            <item index="6" class="java.lang.String" itemvalue="orjson" />
+            <item index="7" class="java.lang.String" itemvalue="psycopg-binary" />
+            <item index="8" class="java.lang.String" itemvalue="pycparser" />
+            <item index="9" class="java.lang.String" itemvalue="bcrypt" />
+            <item index="10" class="java.lang.String" itemvalue="itsdangerous" />
+            <item index="11" class="java.lang.String" itemvalue="Mako" />
+            <item index="12" class="java.lang.String" itemvalue="ujson" />
+            <item index="13" class="java.lang.String" itemvalue="setuptools" />
+            <item index="14" class="java.lang.String" itemvalue="idna" />
+          </list>
+        </value>
+      </option>
+    </inspection_tool>
+    <inspection_tool class="PyPep8Inspection" enabled="true" level="WEAK WARNING" enabled_by_default="true">
+      <option name="ignoredErrors">
+        <list>
+          <option value="E127" />
+        </list>
+      </option>
+    </inspection_tool>
+    <inspection_tool class="PyShadowingBuiltinsInspection" enabled="true" level="WEAK WARNING" enabled_by_default="true">
+      <option name="ignoredNames">
+        <list>
+          <option value="id" />
+        </list>
+      </option>
+    </inspection_tool>
+    <inspection_tool class="PyUnresolvedReferencesInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredIdentifiers">
+        <list>
+          <option value="src.trydjango.Blog.models.Article.*" />
+        </list>
+      </option>
+    </inspection_tool>
+  </profile>
+</component>
