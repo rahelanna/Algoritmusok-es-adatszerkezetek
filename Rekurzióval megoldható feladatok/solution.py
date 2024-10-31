@@ -1,51 +1,43 @@
-#!/bin/python3
+from collections import Counter
+
+MOD = 10 ** 9 + 7
 
 
-import os
+# Faktoriálisok és inverzek tárolása
+def compute_factorials(n, mod):
+    factorials = [1] * (n + 1)
+    invers = [1] * (n + 1)
+
+    # Faktoriálisok számítása
+    for i in range(2, n + 1):
+        factorials[i] = factorials[i - 1] * i % mod
+
+    # Az utolsó faktoriális inverzének számítása
+    invers[n] = pow(factorials[n], mod - 2, mod)
+
+    # i faktoriális inverzének számítása
+    for i in range(n - 1, 0, -1):
+        invers[i] = invers[i + 1] * (i + 1) % mod
+
+    return factorials, invers
 
 
-#
-# Complete the 'powerSum' function below.
-#
-# The function is expected to return an INTEGER.
-# The function accepts following parameters:
-#  1. INTEGER X
-#  2. INTEGER N
-#
+def count_permutations(s):
+    characters = Counter(s)
+    n = len(s)
 
-def powerSum(X, N):
-    # Write your code here
-    # Belső rekurzív függvény
-    def recursive_sum(X, N, num):
-        # Az aktuális szám hatványának kiszámítása
-        power = num ** N
+    # Faktoriálisok és inverzek kiszámítása
+    factorials, invers = compute_factorials(n, MOD)
 
-        # Ha a hatvány nagyobb mint X visszatér 0-val
-        if power > X:
-            return 0
+    # Az összes permutáció számítása
+    result = factorials[n]
 
-        # Ha a hatvány egyenlő X-szel, talált egy megoldást
-        elif power == X:
-            return 1
+    # Osztás a duplikált karakterek faktoriálisaival
+    for db in characters.values():
+        result = result * invers[db] % MOD
 
-        # Az ajtuális szám használata, vagy kihagyása (két ág)
-        else:
-            return (recursive_sum(X - power, N, num + 1) +
-                    recursive_sum(X, N, num + 1))
-
-    # Rekurzió indítása az 1-es számmal
-    return recursive_sum(X, N, 1)
+    return result
 
 
-if __name__ == '__main__':
-    fptr = open(os.environ['OUTPUT_PATH'], 'w')
-
-    X = int(input().strip())
-
-    N = int(input().strip())
-
-    result = powerSum(X, N)
-
-    fptr.write(str(result) + '\n')
-
-    fptr.close()
+s = input().strip()
+print(count_permutations(s))
