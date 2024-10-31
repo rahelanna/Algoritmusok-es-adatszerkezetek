@@ -1,6 +1,8 @@
 #### 4. Feladat: Fák, gráfok
 #### Feladatleírás: Utazás a Holdra
 
+[Link](https://www.hackerrank.com/challenges/journey-to-the-moon/problem?isFullScreen=true)
+
 Az ENSZ tagállamai azt tervezik, hogy két embert küldenek a Holdra. Azt szeretnék, ha különböző országokból érkeznének. Egy olyan listát kapsz, amely párokba rendezett űrhajós azonosítókból áll. Minden pár ugyanannak az országnak az űrhajósait tartalmazza. Határozd meg, hány olyan párt választhatnak ki, amely különböző országok űrhajósaiból áll.
 
 **Példa**
